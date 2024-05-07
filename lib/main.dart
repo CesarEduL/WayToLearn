@@ -1,69 +1,87 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Imagen central
+              Image.asset(
+                'assets/images/baymaxface.png',
+                width: 200,
+                height: 200,
+              ),
+              SizedBox(height: 20),
+              // Botones
+              CustomButton(
+                image:
+                    'assets/images/booksolid.png',
+                text: 'Cuento 1',
+              ),
+              SizedBox(height: 10),
+              CustomButton(
+                image:
+                    'assets/images/booksolid.png',
+                text: 'Cuento 2',
+              ),
+              SizedBox(height: 10),
+              CustomButton(
+                image:
+                    'assets/images/booksolid.png',
+                text: 'Cuento 3',
+              ),
+            ],
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter De'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class CustomButton extends StatelessWidget {
+  final String image;
+  final String text;
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  CustomButton({required this.image, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
+    return SizedBox(
+      width: 150,
+      height: 150,
+      child: ElevatedButton(
+        onPressed: () {
+          // Acción cuando se presiona el botón
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(174, 73, 147, 221)),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Image.asset(
+              image,
+              width: 80,
+              height: 80,
             ),
+            SizedBox(height: 10),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              text,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
