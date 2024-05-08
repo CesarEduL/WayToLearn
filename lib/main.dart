@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,17 +21,17 @@ class MyApp extends StatelessWidget {
                 width: 200,
                 height: 200,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Botones
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(right: 120), // Relleno a la derecha
                 child: CustomButton(
                   icon: Icons.book,
                   text: 'Cuento 1',
                 ),
               ),
-              SizedBox(height: 20), // Espacio vertical entre botones
-              Padding(
+              const SizedBox(height: 20), // Espacio vertical entre botones
+              const Padding(
                 padding: EdgeInsets.only(
                     left: 140), // Relleno a la izquierda y a la derecha
                 child: CustomButton(
@@ -37,8 +39,8 @@ class MyApp extends StatelessWidget {
                   text: 'Cuento 2',
                 ),
               ),
-              SizedBox(height: 20), // Espacio vertical entre botones
-              Padding(
+              const SizedBox(height: 20), // Espacio vertical entre botones
+              const Padding(
                 padding: EdgeInsets.only(right: 120), // Relleno a la izquierda
                 child: CustomButton(
                   icon: Icons.book,
@@ -57,7 +59,7 @@ class CustomButton extends StatelessWidget {
   final IconData icon;
   final String text;
 
-  CustomButton({required this.icon, required this.text});
+  const CustomButton({super.key, required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           backgroundColor: MaterialStateProperty.all<Color>(
-            Color.fromARGB(174, 73, 147, 221),
+            const Color.fromARGB(174, 73, 147, 221),
           ),
         ),
         child: Column(
@@ -86,10 +88,10 @@ class CustomButton extends StatelessWidget {
               size: 60,
               color: Colors.white,
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
                 color: Colors.white,
               ),

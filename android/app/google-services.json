@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "32146242382",
+    "firebase_url": "https://waytolearn-3ebca-default-rtdb.firebaseio.com",
+    "project_id": "waytolearn-3ebca",
+    "storage_bucket": "waytolearn-3ebca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32146242382:android:4d8bca0d9797f1269efc1f",
+        "android_client_info": {
+          "package_name": "com.waylearn.waytolearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiCL99Yih3xeCDRkIhICLs4RbixP8AmQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
