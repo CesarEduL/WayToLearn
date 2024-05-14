@@ -1,4 +1,4 @@
-package com.example.waytolearn
+package com.waylearn.waytolearn
 
 import io.flutter.embedding.android.FlutterActivity
 
